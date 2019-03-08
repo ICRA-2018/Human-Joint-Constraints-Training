@@ -1,0 +1,15 @@
+name: trajectory-optimized-active-search
+
+base: 
+  ubuntu: 16.04
+  cuda: 8.0-runtime
+  cudnn: 6-runtime
+  opengl: runtime
+
+pip3:
+  - keras
+  - tensorflow-gpu==1.4
+
+matlab:
+  host_path: /usr/local/MATLAB/R2017a
+  mac_address: "2c:60:0c:d6:50:36"
