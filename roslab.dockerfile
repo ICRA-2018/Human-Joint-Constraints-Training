@@ -100,6 +100,8 @@ ENV PATH="/usr/local/MATLAB/R2017a/bin:${PATH}"
 
 ##################################### PIP3 #####################################
 
+RUN pip3 install --upgrade pip
+
 RUN pip3 install  \
     keras \
     tensorflow-gpu==1.4

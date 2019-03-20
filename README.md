@@ -32,4 +32,4 @@ cd Human-Joint-Constraints-Training
 
 ## 4. Run in JupyterLab:
 
-Open the notebook [./demo.ipynb](demo.ipynb) and run all the cells.
+Open the notebook [demo.ipynb](demo.ipynb) and run all the cells.
