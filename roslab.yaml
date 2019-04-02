@@ -1,10 +1,9 @@
-name: trajectory-optimized-active-search
+name: human-joint-constraints-training
 
 base: 
   ubuntu: 16.04
   cuda: 8.0-runtime
   cudnn: 6-runtime
-  opengl: runtime
 
 pip3:
   - keras

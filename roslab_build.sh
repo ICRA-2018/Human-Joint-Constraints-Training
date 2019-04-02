@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -f roslab.dockerfile -t trajectory-optimized-active-search .
+docker build -f roslab.dockerfile -t human-joint-constraints-training .

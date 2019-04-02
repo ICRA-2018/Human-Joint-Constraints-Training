@@ -1,4 +1,4 @@
-FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu16.04
+FROM ubuntu:16.04
 
 ################################## JUPYTERLAB ##################################
 
@@ -14,7 +14,8 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install jupyterlab==0.35.4 bash_kernel==0.7.1 tornado==5.1.1 \
+RUN pip3 install --upgrade pip setuptools \
+ && python3 -m pip install jupyterlab==0.35.4 bash_kernel==0.7.1 tornado==5.1.1 \
  && python3 -m bash_kernel.install
 
 ENV SHELL=/bin/bash \
@@ -100,17 +101,15 @@ ENV PATH="/usr/local/MATLAB/R2017a/bin:${PATH}"
 
 ##################################### PIP3 #####################################
 
-RUN pip3 install --upgrade pip
-
 RUN pip3 install  \
     keras \
     tensorflow-gpu==1.4
 
 ##################################### COPY #####################################
 
-RUN mkdir ${HOME}/trajectory-optimized-active-search
+RUN mkdir ${HOME}/human-joint-constraints-training
 
-COPY . ${HOME}/trajectory-optimized-active-search
+COPY . ${HOME}/human-joint-constraints-training
 
 ##################################### TAIL #####################################
 
@@ -118,4 +117,4 @@ RUN chown -R ${NB_UID} ${HOME}
 
 USER ${NB_USER}
 
-WORKDIR ${HOME}/trajectory-optimized-active-search
+WORKDIR ${HOME}/human-joint-constraints-training
