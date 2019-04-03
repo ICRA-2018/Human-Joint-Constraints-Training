@@ -1,6 +1,6 @@
 # Human-Joint-Constraints-Training
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/icra2018/human-joint-constraints-training.svg)](https://hub.docker.com/r/icra2018/human-joint-constraints-training)
-<a href="#roslab-run"><img src="https://img.shields.io/badge/ROSLab-run-brightgreen.svg"></a>
+<a href="#how-to-run-with-docker"><img src="https://img.shields.io/badge/Docker-instructions-brightgreen.svg"></a>
 
 Training procedure for ICRA 2018 paper https://arxiv.org/abs/1709.08685. For usage during physics simulations, see https://github.com/dartsim/dart/pull/1016.
 
@@ -11,22 +11,18 @@ Run toa_generate_random_pairs.m to generate samples for training the range(valid
 
 Neural-net training follows the standard process of feed-forward nets. There is an example python script keras_leftarm_train.py using the Keras library for your reference.
 
-# ROSLab Run
+# How to Run with Docker
 
-## Prerequisites:
-* [Docker](https://www.docker.com/)
-* [nvidia-docker](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
-* Tested on Ubuntu Linux 16.04, Docker version 18.06.1-ce, NVIDIA Driver version 410.48.
+## Linux
+#### Prerequisites
+* MATLAB installed on local host.
 
-## 1. Clone the repository and build ROSLab image:
+Tested on Ubuntu 16.04.6 with Docker 18.06.1-ce, MATLAB R2017a.
+
+1. Open a terminal and run the command (replacing the MATLAB folder and MAC address with your own):
 ```
-git clone https://github.com/ICRA-2018/Human-Joint-Constraints-Training.git
-cd Human-Joint-Constraints-Training
-./roslab_build
+docker run --rm -p 8888:8888 -v /usr/local/MATLAB/R2017a:/usr/local/MATLAB/R2017a \
+    -v /usr/local/lib/python3.5/dist-packages/matlab:/usr/local/lib/python3.5/dist-packages/matlab \
+    --mac-address=2c:60:0c:d6:50:36 icra2018/human-joint-constraints-training:latest
 ```
-## 2. Launch ROSLab image:
-```
-./roslab_run
-```
-## 3. Open JupyterLab in your browser:
-[http://localhost:8888/lab/tree/README.ipynb](http://localhost:8888/lab/tree/README.ipynb)
+2. Run a web browser and open the link: [http://localhost:8888/lab/tree/README.ipynb](http://localhost:8888/lab/tree/README.ipynb)
