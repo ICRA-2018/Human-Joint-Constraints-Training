@@ -1,4 +1,5 @@
 # Human-Joint-Constraints-Training
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/icra2018/human-joint-constraints-training.svg)
 <a href="#roslab-run"><img src="https://img.shields.io/badge/ROSLab-run-brightgreen.svg"></a>
 
 Training procedure for ICRA 2018 paper https://arxiv.org/abs/1709.08685. For usage during physics simulations, see https://github.com/dartsim/dart/pull/1016.
@@ -29,7 +30,3 @@ cd Human-Joint-Constraints-Training
 ```
 ## 3. Open JupyterLab in your browser:
 [http://localhost:8888/lab/tree/README.ipynb](http://localhost:8888/lab/tree/README.ipynb)
-
-## 4. Run in JupyterLab:
-
-Open the notebook [demo.ipynb](demo.ipynb) and run all the cells.
