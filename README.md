@@ -15,13 +15,15 @@ Neural-net training follows the standard process of feed-forward nets. There is 
 
 ## Linux
 #### Prerequisites
+* NVIDIA GPU with CUDA>=8.0
+* [nvidia-docker 2.0](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
 * MATLAB installed on local host.
 
-Tested on Ubuntu 16.04.6 with Docker 18.06.1-ce, MATLAB R2017a.
+Tested on Ubuntu 16.04.6 with Docker 18.06.1-ce, NVIDIA GeForce 940M, Driver version 410.48, MATLAB R2017a.
 
 1. Open a terminal and run the command (replacing the MATLAB folder and MAC address with your own):
 ```
-docker run --rm -p 8888:8888 -v /usr/local/MATLAB/R2017a:/usr/local/MATLAB/R2017a \
+nvidia-docker run --rm -p 8888:8888 -v /usr/local/MATLAB/R2017a:/usr/local/MATLAB/R2017a \
     -v /usr/local/lib/python3.5/dist-packages/matlab:/usr/local/lib/python3.5/dist-packages/matlab \
     --mac-address=2c:60:0c:d6:50:36 icra2018/human-joint-constraints-training:latest
 ```
